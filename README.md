@@ -1,6 +1,8 @@
 # ECSE-420-Final-Project
 
 ## Dataset
+https://www.kaggle.com/datasets/alizahidraja/captcha-data/data
+CAPTCHA dataset containing 100 images (png)
 
 ## Sequential Binarize
 
