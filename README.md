@@ -6,11 +6,8 @@ CAPTCHA dataset containing 100 images (png)
 https://www.kaggle.com/datasets/alizahidraja/captcha-data/data
 
 ## Sequential Binarize
-Certainly! Below is a basic README template for your GitHub repository. You can customize it further based on additional details you want to include.
 
 ---
-
-# Image Processing Script
 
 This Python script performs basic image processing tasks on a dataset of images. It includes functions to load images from a specified dataset directory, convert them to NumPy arrays, apply binarization, and plot pairs of original and binarized images.
 
@@ -82,23 +79,3 @@ pip install -r requirements.txt
 python image_processing_script.py
 ```
 
-This will execute the main function and perform the specified image processing tasks.
-
-## Notes
-
-- Ensure that the dataset directory contains PNG images.
-- Adjust the dataset directory path in the script as needed.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
---- 
-
-Feel free to add any additional sections that you think would be beneficial for users interacting with your repository.
-
-## Parallel Binarize
-
-## Sequential Filter2
-
-## Parallel Filter2
