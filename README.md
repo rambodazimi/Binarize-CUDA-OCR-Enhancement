@@ -27,6 +27,14 @@ pip install -r requirements.txt
    ```bash
    python binarize_sequential.py
    ```
+   
+## Directory Structure
+
+1. **dataset**
+   - Contains 100 png images from the dataset (before applying the filters)
+   - Images are 200x50 pixels
+2. **output**
+   - Contains the binarized images after running the Python script 
 
 ## Functions
 
