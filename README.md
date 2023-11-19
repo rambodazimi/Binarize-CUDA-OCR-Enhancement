@@ -1,6 +1,6 @@
 # Sequential Binarize
 
-This Python script performs binarization task on a dataset of images. It includes functions to load images from a specified dataset directory, convert them to NumPy arrays, apply binarization, and plot pairs of original and binarized images.
+This Python script performs sequential binarization task on a dataset of images. It includes functions to load images from a specified dataset directory, convert them to NumPy arrays, apply binarization, and plot pairs of original and binarized images.
 The dataset can be found at: https://www.kaggle.com/datasets/alizahidraja/captcha-data
 
 ## Prerequisites
