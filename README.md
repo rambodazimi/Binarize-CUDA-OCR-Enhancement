@@ -2,8 +2,6 @@
 
 ## Sequential Binarize
 
----
-
 This Python script performs basic image processing tasks on a dataset of images. It includes functions to load images from a specified dataset directory, convert them to NumPy arrays, apply binarization, and plot pairs of original and binarized images.
 
 ## Prerequisites
