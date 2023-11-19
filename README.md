@@ -64,5 +64,5 @@ pip install -r requirements.txt
 6. **main()**
    - Description: Executes the main processing workflow. Calls functions to load images, convert them to arrays, apply binarization, and plot pairs of images.
 
-## Test
+## Output
 ![test](https://i.ibb.co/1Lx44PV/Figure-1.png)
