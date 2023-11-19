@@ -3,6 +3,7 @@ import numpy as np
 import os
 import matplotlib.pyplot as plt
 import random
+import time
 
 def load_images():
     """
@@ -55,6 +56,7 @@ def binarize_all(image_np_arrays):
     """
     This method applies binarization to all the images in the dataset and saves the result in the output directory
     """
+    start_time = time.time()
     current_directory = os.getcwd()
     output_directory = "output"
     output_directory = os.path.join(current_directory, output_directory)
@@ -65,6 +67,8 @@ def binarize_all(image_np_arrays):
         output_path = os.path.join(output_directory, f"binarized_{counter}.png")
         cv2.imwrite(output_path, result) # store the binarized image into the output directory
         counter = counter + 1
+
+    print("--- Sequential Binarization Execution Time: %s seconds ---" % (time.time() - start_time))
 
 def plot_original_and_binarize(image_np_arrays, number: int):
     """
