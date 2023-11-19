@@ -48,7 +48,7 @@ pip install -r requirements.txt
      - `image`: NumPy array representing the image.
      - `threshold`: Binarization threshold.
    - Output: Binarized image.
-   - The binarization process is applied to each pixel in the image. For RGB images, the function converts each pixel to grayscale intensity using the formula intensity = 0.299*R + 0.587*G + 0.114*B.
+   - The binarization process is applied to each pixel in the image. For RGB images, the function converts each pixel to grayscale intensity using the formula intensity = 0.299R + 0.587G + 0.114B.
    -  Then, it compares the grayscale intensity with the specified threshold and sets the pixel value accordingly.
    -  The result is a binary image where pixels are either set to 255 (white) or 0 (black) based on the grayscale intensity and the specified threshold.
 
