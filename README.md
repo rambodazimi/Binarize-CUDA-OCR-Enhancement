@@ -61,14 +61,20 @@ pip install -r requirements.txt
 
 4. **binarize_all(image_np_arrays)**
    - Description: Applies binarization to all the images in the dataset and saves the result in the output directory.
+   - Output: Array containing individual execution time in seconds
 
 5. **plot_original_and_binarize(image_np_arrays, number: int)**
    - Description: Plots pairs of original and binarized images for a specified number of randomly selected images.
    - Input:
      - `image_np_arrays`: NumPy array containing images in RGB format.
-     - `number`: Number of image pairs to plot.
+     - `number`: Number of image pairs to plot
+     
+6. **plot_execution_time(image_np_arrays)**
+   - Description: Plots individual execution time of binarization on selected images
+   - Input:
+     - `image_np_arrays`: NumPy array containing images in RGB format.
 
-6. **main()**
+7. **main()**
    - Description: Executes the main processing workflow. Calls functions to load images, convert them to arrays, apply binarization, and plot pairs of images.
 
 ## Output
