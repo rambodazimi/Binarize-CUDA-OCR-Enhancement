@@ -78,7 +78,6 @@ pip install -r requirements.txt
    - Description: Executes the main processing workflow. Calls functions to load images, convert them to arrays, apply binarization, and plot pairs of images.
 
 ## Output
-![test](https://i.ibb.co/VV96b8M/Figure-1.png)
 ![test](https://i.ibb.co/vxMtwTb/sequential-execution-time.png)
 ![test](https://i.ibb.co/PZLfGRG/sequential-binary-comparison.png)
 ![test](https://i.ibb.co/bLcKNwG/parallel-execution-time.png)
