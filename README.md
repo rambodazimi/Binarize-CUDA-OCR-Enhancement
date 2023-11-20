@@ -1,4 +1,5 @@
-# Sequential Binarize
+
+# 1. Sequential Binarize
 
 This Python script performs sequential binarization task on a dataset of images. It includes functions to load images from a specified dataset directory, convert them to NumPy arrays, apply binarization, and plot pairs of original and binarized images.
 The dataset can be found at: https://www.kaggle.com/datasets/alizahidraja/captcha-data
@@ -76,6 +77,94 @@ pip install -r requirements.txt
 
 7. **main()**
    - Description: Executes the main processing workflow. Calls functions to load images, convert them to arrays, apply binarization, and plot pairs of images.
+
+# 2. Parallel Binarization
+
+# Parallel Image Binarization
+
+## Introduction
+
+This Python script provides a parallelized image binarization process using the CUDA-enabled CuPy library. The binarization is applied to a dataset of images, and the execution time for each image is analyzed and visualized.
+
+## Dependencies
+
+- OpenCV (cv2)
+- NumPy
+- Matplotlib
+- CuPy
+- Numba
+
+Make sure to install these dependencies before running the script.
+
+```bash
+pip install opencv-python numpy matplotlib cupy numba
+```
+
+## Usage
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
+```
+
+2. Place your dataset of PNG images in the "dataset" directory.
+
+3. Run the script:
+
+```bash
+python script_name.py
+```
+
+## Code Explanation
+
+### `load_images()`
+
+This function retrieves and sorts PNG images from the "dataset" directory.
+
+### `image_to_array(images: list, image_directory: str)`
+
+Converts each image to CuPy arrays, representing RGBA values.
+
+### `binarize_image_cupy(image, threshold)`
+
+Applies binarization to a given image in CuPy format based on a specified threshold.
+
+### `binarize_all_parallel(image_cuda_arrays)`
+
+Applies binarization to all images in the dataset in parallel using CuPy and CUDA.
+
+### `plot_execution_time(image_cupy_arrays)`
+
+Plots the execution time of binarization for each image and saves the plot as "analysis/parallel_execution_time.png."
+
+### `main()`
+
+Calls the necessary functions to load images, convert them to CuPy arrays, and plot the execution time.
+
+### `__main__`
+
+Executes the main function when the script is run.
+
+## Results
+
+The script generates a plot showing the execution time for binarizing each image in the dataset and saves it as "analysis/parallel_execution_time.png."
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+
+- [OpenCV](https://opencv.org/) - Computer Vision Library
+- [NumPy](https://numpy.org/) - Numerical Computing Library
+- [Matplotlib](https://matplotlib.org/) - Plotting and Visualization Library
+- [CuPy](https://cupy.dev/) - GPU-accelerated Library for NumPy
+- [Numba](https://numba.pydata.org/) - Just-in-time Compilation for Python
+
+Feel free to customize this documentation according to your project's specific details and requirements.
+
 
 ## Output
 ![test](https://i.ibb.co/vxMtwTb/sequential-execution-time.png)
