@@ -79,5 +79,6 @@ pip install -r requirements.txt
 
 ## Output
 ![test](https://i.ibb.co/vxMtwTb/sequential-execution-time.png)
-![test](https://i.ibb.co/PZLfGRG/sequential-binary-comparison.png)
 ![test](https://i.ibb.co/bLcKNwG/parallel-execution-time.png)
+![test](https://i.ibb.co/PZLfGRG/sequential-binary-comparison.png)
+
