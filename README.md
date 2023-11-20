@@ -1,4 +1,5 @@
-# Sequential Binarize
+
+# 1. Sequential Binarize
 
 This Python script performs sequential binarization task on a dataset of images. It includes functions to load images from a specified dataset directory, convert them to NumPy arrays, apply binarization, and plot pairs of original and binarized images.
 The dataset can be found at: https://www.kaggle.com/datasets/alizahidraja/captcha-data
@@ -34,7 +35,9 @@ pip install -r requirements.txt
    - Contains 100 png images from the dataset (before applying the filters)
    - Images are 200x50 pixels
 2. **output**
-   - Contains the binarized images after running the Python script 
+   - Contains the binarized images after running the Python script
+3. **analysis**
+   - Contains the plots generated from each file
 
 ## Functions
 
@@ -77,5 +80,75 @@ pip install -r requirements.txt
 7. **main()**
    - Description: Executes the main processing workflow. Calls functions to load images, convert them to arrays, apply binarization, and plot pairs of images.
 
+# 2. Parallel Binarization
+
+## Introduction
+
+This Python script provides a parallelized image binarization process using the CUDA-enabled CuPy library. The binarization is applied to the same dataset of images used in the sequential part, and the execution time for each image is analyzed and visualized.
+
+## Dependencies
+
+- OpenCV (cv2)
+- NumPy
+- Matplotlib
+- CuPy
+- Numba
+
+Make sure to install these dependencies before running the script.
+
+```bash
+pip install opencv-python numpy matplotlib cupy numba
+```
+
+## Usage
+
+1. Clone the repository
+
+2. Place your dataset of PNG images in the "dataset" directory.
+
+3. Run the script:
+
+```bash
+python binarize_parallel.py
+```
+
+## Code Explanation
+
+### `load_images()`
+
+This function retrieves and sorts PNG images from the "dataset" directory.
+
+### `image_to_array(images: list, image_directory: str)`
+
+Converts each image to CuPy arrays, representing RGBA values.
+
+### `binarize_image_cupy(image, threshold)`
+
+Applies binarization to a given image in CuPy format based on a specified threshold.
+
+### `binarize_all_parallel(image_cuda_arrays)`
+
+Applies binarization to all images in the dataset in parallel using CuPy and CUDA.
+
+### `plot_execution_time(image_cupy_arrays)`
+
+Plots the execution time of binarization for each image and saves the plot as "analysis/parallel_execution_time.png."
+
+### `main()`
+
+Calls the necessary functions to load images, convert them to CuPy arrays, and plot the execution time.
+
+### `__main__`
+
+Executes the main function when the script is run.
+
+## Results
+
+The script generates a plot showing the execution time for binarizing each image in the dataset and saves it as "analysis/parallel_execution_time.png."
 ## Output
-![test](https://i.ibb.co/VV96b8M/Figure-1.png)
+![test](https://i.ibb.co/vxMtwTb/sequential-execution-time.png)
+![test](https://i.ibb.co/bLcKNwG/parallel-execution-time.png)
+![test](https://i.ibb.co/1dwqyBD/Screenshot-2023-11-20-at-2-49-13-AM.png)
+![test](https://i.ibb.co/Gkp1SxY/68747470733a2f2f692e6962622e636f2f505a4c664752472f73657175656e7469616c2d62696e6172792d636f6d70617269.png)
+
+Note: As you can see, binarizing 100 images (50x200 pixels) took 2.38 seconds for the sequential part and 0.12 seconds for the parallel part.
