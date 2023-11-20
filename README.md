@@ -80,11 +80,9 @@ pip install -r requirements.txt
 
 # 2. Parallel Binarization
 
-# Parallel Image Binarization
-
 ## Introduction
 
-This Python script provides a parallelized image binarization process using the CUDA-enabled CuPy library. The binarization is applied to a dataset of images, and the execution time for each image is analyzed and visualized.
+This Python script provides a parallelized image binarization process using the CUDA-enabled CuPy library. The binarization is applied to the same dataset of images used in the sequential part, and the execution time for each image is analyzed and visualized.
 
 ## Dependencies
 
@@ -102,19 +100,14 @@ pip install opencv-python numpy matplotlib cupy numba
 
 ## Usage
 
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
-```
+1. Clone the repository
 
 2. Place your dataset of PNG images in the "dataset" directory.
 
 3. Run the script:
 
 ```bash
-python script_name.py
+python binarize_parallel.py
 ```
 
 ## Code Explanation
