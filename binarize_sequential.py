@@ -2,6 +2,8 @@ import cv2
 import numpy as np
 import os
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
 import random
 import time
 
@@ -36,6 +38,7 @@ def binarize_image(image: np.array, threshold: int):
     """
     This method applies binarization with a given threshold to the given image and returns the copy of that image
     """
+    start_time = time.time()
     image_copy = image.copy()  # Make a copy of the image
 
     if len(image_copy.shape) == 3:  # Check if the image is RGB
@@ -50,25 +53,29 @@ def binarize_image(image: np.array, threshold: int):
     else:
         raise ValueError("Invalid input. image should be a 2D or 3D NumPy array.")
 
-    return image_copy
+    return image_copy, time.time() - start_time
 
 def binarize_all(image_np_arrays):
     """
     This method applies binarization to all the images in the dataset and saves the result in the output directory
     """
-    start_time = time.time()
     current_directory = os.getcwd()
     output_directory = "output"
     output_directory = os.path.join(current_directory, output_directory)
 
+    execution_time_arrays = []
     counter = 1
     for image in image_np_arrays:
-        result = binarize_image(image, 127) # threshold is set to 127
+        binarized_image = binarize_image(image, 127)
+        result = binarized_image[0] # threshold is set to 127
+        execution_time_arrays.append(binarized_image[1])
         output_path = os.path.join(output_directory, f"binarized_{counter}.png")
         cv2.imwrite(output_path, result) # store the binarized image into the output directory
         counter = counter + 1
 
-    print("--- Sequential Binarization Execution Time: %s seconds ---" % (time.time() - start_time))
+    print("--- Sequential Binarization Execution Time: %s seconds ---" % (sum(execution_time_arrays)))
+
+    return execution_time_arrays
 
 def plot_original_and_binarize(image_np_arrays, number: int):
     """
@@ -101,13 +108,31 @@ def plot_original_and_binarize(image_np_arrays, number: int):
         plt.axis('off')
         counter = counter + 1
 
-    plt.show()
+    plt.savefig("analysis/sequential_binary_comparison.png")
+    plt.close("analysis/sequential_binary_comparison.png")
+
+def plot_execution_time(image_np_arrays):
+    """
+    This method plots the execution time of the binarization on the number of images
+    """
+    result = binarize_all(image_np_arrays)
+    plt.title("Execution time for each image")
+    plt.scatter(np.arange(start=1, stop=101, step=1), np.array(result), color="blue")
+    plt.axhline(y=np.nanmean(np.array(result)), color="red")
+    legend_elements = [Line2D([0], [0], color='r', lw=4, label='Mean'), Line2D([0], [0], marker='o', color="w", label='Individual Execution Time', markerfacecolor='b', markersize=15),]
+    plt.legend(handles=legend_elements, loc="upper left")
+    plt.xlabel("Image Number")
+    plt.ylabel("Time (s)")
+
+    plt.savefig("analysis/sequential_execution_time.png")
+    plt.close("analysis/sequential_execution_time.png")
 
 
 def main():
     images, image_directory = load_images()
     image_np_arrays = image_to_array(images, image_directory) # each index of this array contains an image in np_array format
     binarize_all(image_np_arrays)
+    plot_execution_time(image_np_arrays)
     plot_original_and_binarize(image_np_arrays, number=2)
 
 
