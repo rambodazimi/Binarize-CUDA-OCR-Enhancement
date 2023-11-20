@@ -131,7 +131,7 @@ def plot_execution_time(image_np_arrays):
 def main():
     images, image_directory = load_images()
     image_np_arrays = image_to_array(images, image_directory) # each index of this array contains an image in np_array format
-    binarize_all(image_np_arrays)
+    #binarize_all(image_np_arrays)
     plot_execution_time(image_np_arrays)
     plot_original_and_binarize(image_np_arrays, number=2)
 
