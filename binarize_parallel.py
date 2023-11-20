@@ -6,7 +6,6 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 import random
 import time
-from numba import jit, cuda
 import cupy as cp
 
 
