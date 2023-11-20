@@ -35,7 +35,9 @@ pip install -r requirements.txt
    - Contains 100 png images from the dataset (before applying the filters)
    - Images are 200x50 pixels
 2. **output**
-   - Contains the binarized images after running the Python script 
+   - Contains the binarized images after running the Python script
+3. **analysis**
+   - Contains the plots generated from each file
 
 ## Functions
 
@@ -143,21 +145,6 @@ Executes the main function when the script is run.
 ## Results
 
 The script generates a plot showing the execution time for binarizing each image in the dataset and saves it as "analysis/parallel_execution_time.png."
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Acknowledgments
-
-- [OpenCV](https://opencv.org/) - Computer Vision Library
-- [NumPy](https://numpy.org/) - Numerical Computing Library
-- [Matplotlib](https://matplotlib.org/) - Plotting and Visualization Library
-- [CuPy](https://cupy.dev/) - GPU-accelerated Library for NumPy
-- [Numba](https://numba.pydata.org/) - Just-in-time Compilation for Python
-
-Feel free to customize this documentation according to your project's specific details and requirements.
-
 
 ## Output
 ![test](https://i.ibb.co/vxMtwTb/sequential-execution-time.png)
