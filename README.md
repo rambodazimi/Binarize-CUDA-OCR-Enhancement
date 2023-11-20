@@ -81,4 +81,5 @@ pip install -r requirements.txt
 ![test](https://i.ibb.co/vxMtwTb/sequential-execution-time.png)
 ![test](https://i.ibb.co/bLcKNwG/parallel-execution-time.png)
 ![test](https://i.ibb.co/PZLfGRG/sequential-binary-comparison.png)
+![test](https://i.ibb.co/1dwqyBD/Screenshot-2023-11-20-at-2-49-13-AM.png)
 
