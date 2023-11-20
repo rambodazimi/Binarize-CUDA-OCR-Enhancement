@@ -145,10 +145,9 @@ Executes the main function when the script is run.
 ## Results
 
 The script generates a plot showing the execution time for binarizing each image in the dataset and saves it as "analysis/parallel_execution_time.png."
-
 ## Output
 ![test](https://i.ibb.co/vxMtwTb/sequential-execution-time.png)
 ![test](https://i.ibb.co/bLcKNwG/parallel-execution-time.png)
-![test](https://i.ibb.co/PZLfGRG/sequential-binary-comparison.png)
+![test](https://i.ibb.co/Gkp1SxY/68747470733a2f2f692e6962622e636f2f505a4c664752472f73657175656e7469616c2d62696e6172792d636f6d70617269.png)
 ![test](https://i.ibb.co/1dwqyBD/Screenshot-2023-11-20-at-2-49-13-AM.png)
 
