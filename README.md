@@ -268,3 +268,6 @@ The script generates a plot showing the execution time for applying gaussian blu
 ![test](analysis/gaussianBlur_sequential_execution_time.png)
 ![test](analysis/gaussianBlur_parallel_execution_time.png)
 
+## Output (Original Image vs Binarized & Gaussian Blur)
+![test](https://github.com/rambodazimi/ECSE-420-Final-Project/blob/65d5eb84e0c122d09957fa21838a4dbe29650ce3/analysis/Binarized%20%2B%20Gaussian%20Blur.png)
+
