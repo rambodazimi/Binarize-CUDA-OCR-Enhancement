@@ -264,7 +264,7 @@ pip install scipy
 ## Results
 
 The script generates a plot showing the execution time for applying gaussian blur on each image in the dataset and saves it as "analysis/gaussianBlur_parallel_execution_time.png."
-## Output
+## Output (Sequential vs Parallel)
 ![test](analysis/gaussianBlur_sequential_execution_time.png)
 ![test](analysis/gaussianBlur_parallel_execution_time.png)
 
