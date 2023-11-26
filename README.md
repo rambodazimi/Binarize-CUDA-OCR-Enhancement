@@ -260,4 +260,11 @@ pip install scipy
 
 8. **main()**
    - Description: Executes the main processing workflow. Calls functions to load images, convert them to arrays, apply gaussian blur, and plot pairs of images.
+  
+## Results
+
+The script generates a plot showing the execution time for applying gaussian blur on each image in the dataset and saves it as "analysis/gaussianBlur_parallel_execution_time.png."
+## Output
+![test](analysis/gaussianBlur_sequential_execution_time.png)
+![test](analysis/gaussianBlur_parallel_execution_time.png)
 
